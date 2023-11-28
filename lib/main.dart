@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_trexis_banking_app/router/router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,16 +13,13 @@ class TrexisBankingApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: AppBar(title: const Text("Hello"),backgroundColor: Theme.of(context).primaryColorDark),
-          body: const Text('Flutter Demo Home Page')),
+      routerConfig: router,
     );
   }
 }
